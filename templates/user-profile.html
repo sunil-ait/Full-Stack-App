@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<head>
+<title>User Profile</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1" />
+<link href="styles/main.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+<header>
+  <div class="topBar">
+    <div class="topBar-notifications">
+      <ul>
+        <li><a href="javascript:;" class="messages"><img src="images/spacer.gif" /><span class="counts">20</span></a></li>
+        <li><a href="javascript:;" class="anouncements"><img src="images/spacer.gif" /><span class="counts">15</span></a></li>
+      </ul>
+    </div>
+    <nav class="topBar-menu"><a href="javascript:;"><img src="images/spacer.gif" /></a></nav>
+    <h1 class="topBar-title">Profile</h1>
+  </div>
+</header>
+<nav class="leftNavPane">
+  <ul>
+    <li><a href="javascript:;"><img src="images/spacer.gif" class="icon_home" /> <span>Home</span></a></li>
+    <li><a href="templates/user-profile.html" class="active"><img src="images/spacer.gif" class="icon_profile" /> <span>Profile</span></a></li>
+    <li><a href="templates/curriculum.html"><img src="images/spacer.gif" class="icon_curriculum" /> <span>Curriculum</span></a></li>
+    <li><a href="javascript:;"><img src="images/spacer.gif" class="icon_mail" /> <span>Mail</span></a></li>
+    <li><a href="javascript:;"><img src="images/spacer.gif" class="icon_pd" /> <span>PD</span></a></li>
+    <li><a href="javascript:;"><img src="images/spacer.gif" class="icon_linegraph" /> <span>Linegraph</span></a></li>
+    <li><a href="javascript:;"><img src="images/spacer.gif" class="icon_exceed" /> <span>Exceed</span></a></li>
+    <li><a href="javascript:;"><img src="images/spacer.gif" class="icon_gb" /> <span>GB</span></a></li>
+    <li><a href="javascript:;"><img src="images/spacer.gif" class="icon_moodle" /> <span>Moodle</span></a></li>
+    <li><a href="javascript:;" class="moreNavs"><img src="images/spacer.gif" class="icon_moreNavs" /> <span>More</span></a></li>
+  </ul>
+</nav>
+<div class="sectionContent active" id="section_content">
+  <header id="section_header" class="section_header">
+    <div class="userProfile">
+      <div class="userProfile-complete">
+        <p>PROFILE COMPLETENESS</p>
+        <h4>85%</h4>
+        <div value="85" max="100" class="userProfile-progressBar"><span style="width:85%"></span></div>
+      </div>
+      <figure><img src="images/user-photo.jpg" alt="User Name" /></figure>
+      <div class="userProfile-Details">
+        <h2>Johnson, Clara</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra dignissim pellentesque.</p>
+        <h4>12/04/2000, 13 years <img src="images/spacer.gif" class="gender female" /></h4>
+      </div>
+      <div class="cb"></div>
+    </div>
+    <div class="info">
+      <nav class="wizardTabs">
+        <ul>
+          <li><a href="javascript:;" class="icon_school active"><img src="images/spacer.gif" /><span>SCHOOLS</span></a></li>
+          <li><a href="javascript:;" class="icon_interest"><img src="images/spacer.gif" /><span>INTERESTS</span></a></li>
+          <li><a href="javascript:;" class="icon_learningStyle"><img src="images/spacer.gif" /><span>LEARNING STYLE</span></a></li>
+          <li><a href="javascript:;" class="icon_badges"><img src="images/spacer.gif" /><span>BADGES</span></a></li>
+        </ul>
+      </nav>
+      <h2>SCHOOLS</h2>
+      
+    </div>
+  </header>
+  <div id="scrollableContent" class="contentArea">
+    <div class="profile-schools">
+    <h3>I study at,</h3>
+    <ul class="study current">
+    	<li>
+        	<h5 class="study-className">School A</h5>
+            <p class="study-place">New York</p>
+            <p class="study-duration">Mar 2011 - Till Date</p>
+        </li>
+    </ul>
+    <h3>I studied at,</h3>
+    <ul class="study mt20">
+    	<li>
+        	<h5 class="study-className">School A</h5>
+            <p class="study-place">New York</p>
+            <p class="study-duration">Mar 2011 - Till Date</p>
+        </li>
+        <li>
+        	<h5 class="study-className">School A</h5>
+            <p class="study-place">New York</p>
+            <p class="study-duration">Mar 2011 - Till Date</p>
+        </li>
+        <li>
+        	<h5 class="study-className">School A</h5>
+            <p class="study-place">New York</p>
+            <p class="study-duration">Mar 2011 - Till Date</p>
+        </li>
+        <li>
+        	<h5 class="study-className">School A</h5>
+            <p class="study-place">New York</p>
+            <p class="study-duration">Mar 2011 - Till Date</p>
+        </li>
+        <li>
+        	<h5 class="study-className">School A</h5>
+            <p class="study-place">New York</p>
+            <p class="study-duration">Mar 2011 - Till Date</p>
+        </li>
+    </ul>
+    </div>
+  </div>
+</div>
+<div class="cb"></div>
+<footer class="footer" id="footer">
+  <nav class="fr">
+    <ul>
+      <li><a href="javascript:;" class="icon_addSchool"><img src="images/spacer.gif" /><span>Add School</span></a></li>
+      <li><a href="javascript:;" class="icon_editProfile"><img src="images/spacer.gif" /><span>Edit Profile</span></a></li>
+    </ul>
+  </nav>
+  <nav class="fl">
+    <ul>
+      <li><a href="javascript:;" class="icon_back"><img src="images/spacer.gif" /><span>Back</span></a></li>
+    </ul>
+  </nav>
+</footer>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".topBar-menu").click(function(){
+		$(".leftNavPane").toggleClass("active");
+		$(".sectionContent").toggleClass("active");
+	});
+});
+</script>
+</body>
+</html>
