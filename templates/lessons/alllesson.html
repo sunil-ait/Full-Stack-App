@@ -1,0 +1,75 @@
+<div class="curriculum-listings">
+  <h3 align="center"><b>Curriculum Manager</b></h3>
+  <div class="backing">
+    <a class="btn btn-primary" ui-sref="app.coursemodules({courseId: courseid})">Back</a>
+  </div>
+  <br/>
+  <div class="container_div">
+    <ul class="scrolling">
+      <a>
+        <li>
+          <div align="center" style="margin-top: 25%;">
+            <input type="button" class="btn btn-primary" ng-click="open(moduleid,1)" value="New Lesson">
+          </div>
+        </li>
+        <li ng-repeat="lesson in allLessons">   
+          <div class="curriculum-title">
+          <br/>
+             <span align="center">{{lesson.title}}</span>
+          </div>
+          <div class="curriculum-desc">{{lesson.description}}</div>
+          <div align="center">
+          <a class="btn btn-primary" ui-sref="app.areacourses({areaId: area.id})">Graph</a>
+            <a class="btn btn-primary" ui-sref="app.lessonlos({lessonId: lesson.id})">View</a>
+            <a class="btn btn-primary" ng-click="editlesson(lesson.id,2)">Edit</a>
+            <a class="btn btn-primary" ng-click="deletelesson(lesson)">Delete</a>
+          </div>
+          <br>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>
+
+<script type="text/ng-template" id="mylessonModalContent.html">
+  <div class="modal-header">
+      <h3 align="center"><b >New Lesson</b></h3>
+  </div>
+  <div class="modal-body">
+    <form name="createlesson" class="model" novalidate>
+      <div class="control-group">
+        <br/>
+        <div class="form-group" ng-class="{ 'has-error' : createlesson.id.$invalid && !createlesson.id.$pristine }">
+          <input type="text" placeholder="Lesson Id" class="form-control" name="id" ng-model="lesson.id" ng-minlength="3" ng-maxlength="8" required>
+          <!-- <p ng-show="createlesson.id.$invalid && !createlesson.id.$pristine" class="help-block">You should enter id properly</p> -->
+          <p ng-show="createlesson.id.$error.minlength" class="help-block">Id is too short.</p>
+          <p ng-show="createlesson.id.$error.maxlength" class="help-block">Id is too long.</p>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error' : createlesson.title.$invalid && !createlesson.title.$pristine }">
+          <input type="text" placeholder="Lesson title" class="form-control" name="title" ng-model="lesson.title" ng-minlength="3" ng-maxlength="8" required>
+          <p ng-show="createlesson.title.$error.minlength" class="help-block">Username is too short.</p>
+          <p ng-show="createlesson.title.$error.maxlength" class="help-block">Username is too long.</p>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : createlesson.image.$invalid && !createlesson.image.$pristine }">
+            <input type="text" placeholder="Lesson Image" class="form-control" name="image" ng-model="lesson.image" ng-minlength="10" ng-maxlength="20" required>
+            <p ng-show="createlesson.image.$error.minlength" class="help-block">Image is too short.</p>
+            <p ng-show="createlesson.image.$error.maxlength" class="help-block">Image is too long.</p>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : createlesson.description.$invalid && !createlesson.description.$pristine }">
+            <textarea name="description" class="form-control" rows="6" Placeholder="Description" id ="description" ng-model="lesson.description" ng-minlength="10" ng-maxlength="20" required>
+            </textarea>          
+            <p ng-show="createlesson.description.$error.minlength" class="help-block">description is too short.</p>
+            <p ng-show="createlesson.description.$error.maxlength" class="help-block">description is too long.</p>
+        </div>
+        <div class="controls" ng-disabled="createlesson.$invalid">
+          <button  ng-if="id ==1"ui-sref="app.dashboard" class="btn btn-primary" ng-click="save(1)" ng-disabled="createlesson.$invalid">Save</button>
+          <button ui-sref="app.contentarea"  ng-if="id==2" class="btn btn-primary" ng-click="save(2)" ng-disabled="createlesson.$invalid">Save</button>
+          <button ui-sref="app.contentarea" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+  </div>
+</script>

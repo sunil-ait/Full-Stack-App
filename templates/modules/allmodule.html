@@ -1,0 +1,74 @@
+<div class="curriculum-listings">
+  <h3 align="center"><b>Curriculum Manager</b></h3>
+  <div class="backing">
+    <a class="btn btn-primary" ui-sref="app.areacourses({areaId: areaid})">Back</a>
+  </div>
+  <div class="container_div">
+    <ul class="scrolling">
+      <a>
+        <li>
+         <div align="center" style="margin-top: 25%;">
+          <input type="button" class="btn btn-primary" ng-click="open(courseid, 1)" value="New Module">
+        </div>
+        </li>
+        <li ng-repeat="module in allModules">   
+          <div class="curriculum-title">
+          <br/>
+            <span align="center">{{module.title}}</span>
+          </div>
+          <div class="curriculum-desc">{{module.description}}</div>
+          <div align="center">
+            <a class="btn btn-primary" ui-sref="app.areacourses({areaId: area.id})">Graph</a>
+            <a class="btn btn-primary" ui-sref="app.modulelessons({moduleId: module.id})">View</a>
+            <a class="btn btn-primary" ng-click="editmodule(module.id, 2)">Edit</a>
+            <a class="btn btn-primary" ng-click="deletemodule(module)">Delete</a>
+          </div>
+          <br>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>
+
+<script type="text/ng-template" id="mymoduleModalContent.html">
+  <div class="modal-header">
+      <h3 align="center"><b >New Module</b></h3>
+  </div>
+  <div class="modal-body">
+    <form name="createmodule" class="model" novalidate>
+      <div class="control-group">
+        <br/>
+        <div class="form-group" ng-class="{ 'has-error' : createmodule.id.$invalid && !createmodule.id.$pristine }">
+          <input type="text" placeholder="Module Id" class="form-control" name="id" ng-model="module.id" ng-minlength="3" ng-maxlength="8" required>
+          <!-- <p ng-show="createmodule.id.$invalid && !createmodule.id.$pristine" class="help-block">You should enter id properly</p> -->
+          <p ng-show="createmodule.id.$error.minlength" class="help-block">Id is too short.</p>
+          <p ng-show="createmodule.id.$error.maxlength" class="help-block">Id is too long.</p>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error' : createmodule.title.$invalid && !createmodule.title.$pristine }">
+          <input type="text" placeholder="Module title" class="form-control" name="title" ng-model="module.title" ng-minlength="3" ng-maxlength="8" required>
+          <p ng-show="createmodule.title.$error.minlength" class="help-block">Username is too short.</p>
+          <p ng-show="createmodule.title.$error.maxlength" class="help-block">Username is too long.</p>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : createmodule.image.$invalid && !createmodule.image.$pristine }">
+            <input type="text" placeholder="Module Image" class="form-control" name="image" ng-model="module.image" ng-minlength="10" ng-maxlength="20" required>
+            <p ng-show="createmodule.image.$error.minlength" class="help-block">Image is too short.</p>
+            <p ng-show="createmodule.image.$error.maxlength" class="help-block">Image is too long.</p>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : createmodule.description.$invalid && !createmodule.description.$pristine }">
+            <textarea name="description" class="form-control" rows="6" Placeholder="Description" id ="description" ng-model="module.description" ng-minlength="10" ng-maxlength="20" required>
+            </textarea>          
+            <p ng-show="createmodule.description.$error.minlength" class="help-block">description is too short.</p>
+            <p ng-show="createmodule.description.$error.maxlength" class="help-block">description is too long.</p>
+        </div>
+        <div class="controls" ng-disabled="createmodule.$invalid">
+          <button  ng-if="id ==1"ui-sref="app.dashboard" class="btn btn-primary" ng-click="save(1)" ng-disabled="createmodule.$invalid">Save</button>
+          <button ui-sref="app.contentarea"  ng-if="id==2" class="btn btn-primary" ng-click="save(2)" ng-disabled="createmodule.$invalid">Save</button>
+          <button ui-sref="app.contentarea" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+  </div>
+</script>

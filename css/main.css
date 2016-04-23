@@ -1,0 +1,229 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd75Bold';
+    src: url('../fonts/helveticaneueltstd-bd.eot');
+    src: url('../fonts/helveticaneueltstd-bd.eot') format('embedded-opentype'),
+         url('../fonts/helveticaneueltstd-bd.woff') format('woff'),
+         url('../fonts/helveticaneueltstd-bd.ttf') format('truetype'),
+         url('../fonts/helveticaneueltstd-bd.svg#HelveticaNeueLTStd75Bold') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd55Roman';
+    src: url('../fonts/helveticaneueltstd-roman.eot');
+    src: url('../fonts/helveticaneueltstd-roman.eot') format('embedded-opentype'),
+         url('../fonts/helveticaneueltstd-roman.woff') format('woff'),
+         url('../fonts/helveticaneueltstd-roman.ttf') format('truetype'),
+         url('../fonts/helveticaneueltstd-roman.svg#HelveticaNeueLTStd55Roman') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd35Thin';
+    src: url('../fonts/helveticaneueltstd-th.eot');
+    src: url('../fonts/helveticaneueltstd-th.eot') format('embedded-opentype'),
+         url('../fonts/helveticaneueltstd-th.woff') format('woff'),
+         url('../fonts/helveticaneueltstd-th.ttf') format('truetype'),
+         url('../fonts/helveticaneueltstd-th.svg#HelveticaNeueLTStd35Thin') format('svg');
+}
+
+
+html,body,h1,h2,h3,h4,h5,h6,div,p,span,a,ul,li,ol,dl,dt,dd,blockquote,q,header,footer,table,td,tr,th,i,b,em,strong,section,article,aside,nav,menu,textarea,input,select,label,legend,form,fieldset,figure,aside,details,figcaption,summary,hgroup{ margin:0; padding:0}
+b,strong{ font-weight:bold}
+i,em{ font-style:italic}
+ul,li,dl{ list-style:none}
+ol, ol li{ list-style:outside; list-style-type:decimal}
+html,body{}
+body{font-size:62.5%; background:#181b21; color:#666}
+html,button,input,select,textarea{font-family: 'Open Sans', sans-serif; border:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}
+textarea{resize:none; overflow:auto}
+img{ border:none}
+
+input[type="button"],input[type="submit"]{ cursor:pointer; font-weight:bold}
+
+.taR{ text-align:right}
+.cb{ clear:both}
+.fl{ float:left}
+.fr{ float:right}
+
+.mt20{ margin-top:20px}
+
+.login{ background:url(../images/login-icon.png) no-repeat center 30px #0c1018; width:530px; height:530px; position:absolute; top:50%; left:50%; margin:-265px 0 0 -265px;
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	-o-border-radius:50%;
+}
+.login input,.login textarea{ padding:10px; width:240px; border-bottom:1px solid #aaa; background:#f7f7f7; font-size:15px; color:#333;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	-o-border-radius:2px;
+}
+.login ul { margin:180px auto 0; width:260px}
+.login ul li { margin-bottom:15px; clear:both; overflow:hidden}
+.login ul li a {color:#8f8f8f; text-decoration:none}
+
+.login .button{	color:#fff;	float:right; width:auto; font-size:15px; border-bottom:1px solid #193836; 
+	background:#295855; /* Fallback */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#295855 ), to(#234b48));/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-linear-gradient(top, #295855, #234b48);/* Safari 5.1, Chrome 10+ */
+	background: -moz-linear-gradient(top, #295855, #234b48);/* Firefox 3.6+ */
+	background: -ms-linear-gradient(top, #295855, #234b48);/* IE 10 */
+	background: -o-linear-gradient(top, #295855, #234b48);/* Opera 11.10+ */
+	
+	text-shadow:0px -1px rgba(0,0,0,.35);
+	-webkit-text-shadow:0px -1px rgba(0,0,0,.35);
+	-moz-text-shadow:0px -1px rgba(0,0,0,.35);	
+}
+
+.forgotPassword .form,.newAccount .form{ width:260px; margin:auto }
+.login h1{ font-size:2.4em; font-weight:normal; color:#8f8f8f; margin:130px 0 20px}
+.newAccount h1{ margin:110px 0 20px}
+.login p{ font-size:15px; line-height:18px; color:#f7f7f7}
+.forgotPassword ul{ margin:30px 0 0 }
+.newAccount ul{ margin:20px 0 0 }
+
+.login .backArrow{ width:50px; height:50px; text-indent:-9999px; display:inline-block; overflow:hidden; background:url(../images/back-arrow.png) no-repeat left top; background-size:100%; position:absolute; left:-25px; top:240px}
+
+
+/* Topbar */
+.topBar{ height:60px; background:#295855}
+.topBar-notifications{ float:right}
+.topBar-notifications ul li{ float:left; font-size:80%}
+.topBar-notifications ul li a{ display:block; width:60px; height:60px; position:relative; text-decoration:none; color:#fff; background:url(../images/60x60-icons.png) no-repeat -9999px -9999px}
+.topBar-notifications ul li a span{ background:#9f0101; border-radius:50%; left:50%; top:50%; padding:5px; position:absolute; font-size:1.2em}
+.topBar-notifications .messages{ background-position:0 0}
+.topBar-notifications .anouncements{ background-position:0 -60px}
+
+.topBar-menu{ float:left; width:60px; height:60px;}
+.topBar-menu img{ width:60px; height:60px; background:url(../images/60x60-icons.png) no-repeat 0 -120px}
+.topBar .topBar-title{ line-height:60px; text-align:center; font-weight:normal; color:#fff; padding:0 20px; font-size:2.4em}
+
+.leftNavPane{ width:76px; float:left; overflow:hidden; transition:width .3s ease-in-out; -webkit-transition:width .3s ease-in-out; -moz-transition:width .3s ease-in-out}
+.leftNavPane ul{ margin:12px 13px;}
+.leftNavPane li{ margin-bottom:3px;}
+.leftNavPane a{ display:block; color:#9d9d9d; text-decoration:none; font-size:1.4em; min-height:50px; min-width:200px;}
+.leftNavPane a span{ float:left; line-height:50px; margin:0 0 0 10px; display:none}
+.leftNavPane a:hover img,.leftNavPane a.active img{background-color:#2b6b67; color:#2b6b67}
+.leftNavPane a:hover,.leftNavPane a.active{color:#fff}
+.leftNavPane a img{width:50px; height:50px; float:left; background:url(../images/50x50-icons.png) #666; border-radius:50%; -webkit-border-radius:50%;	-moz-border-radius:50%;	-o-border-radius:50%; }
+.leftNavPane a.moreNavs{ background-color:transparent}
+.leftNavPane a img.icon_home{ background-position:0px 0px}
+.leftNavPane a img.icon_profile{ background-position:0px -50px}
+.leftNavPane a img.icon_curriculum{ background-position:0px -100px}
+.leftNavPane a img.icon_mail{ background-position:0px -150px}
+.leftNavPane a img.icon_pd{ background-position:0px -200px}
+.leftNavPane a img.icon_linegraph{ background-position:0px -250px}
+.leftNavPane a img.icon_exceed{ background-position:0px -300px}
+.leftNavPane a img.icon_gb{ background-position:0px -350px}
+.leftNavPane a img.icon_moodle{ background-position:0px -400px}
+.leftNavPane a img.icon_moreNavs{ background-position:0px -450px}
+
+.leftNavPane.active{ width:200px}
+.leftNavPane.active a span{ display:block}
+
+.section_header{ width:100%; clear:right;}
+.userProfile { float: left; width: 100%;}
+.info{ background:#efeded; height:75px; line-height:normal; margin:20px 0 0; float:left; width:100%; }
+.info h2{ font-size:2.4em; font-weight:normal; padding:20px; float:left}
+.userProfile figure{ width:145px; height:145px; float:left; margin:-30px 20px 0 0}
+.userProfile figure img{ max-width:100%; border-radius:50%;	-webkit-border-radius:50%;	-moz-border-radius:50%;	-o-border-radius:50%;}
+.userProfile-Details{ float:left; margin:10px 0 0; width:50%; line-height:18px}
+.userProfile-Details h2{ font-size:24px; color:#2b6b67; font-weight:normal}
+.userProfile-Details h4{ font-size:20px; color:#fff; font-weight:normal; margin:15px 0 0}
+.userProfile-Details p,.userProfile-complete p{ font-size:1.2em; color:#fff; margin:10px 0 0 }
+
+.userProfile-complete{ float:right; margin:15px 0 0; width:210px; margin-right:20px;}
+.userProfile-complete h4{font-size:2em; color:#2b6b67; font-weight:normal; margin:5px 0 0}
+.userProfile-progressBar{ background:#dbdbdb; width:100%; height:6px; margin:10px 0 0; padding:0; border:0; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; -o-border-radius:3px; box-shadow:0px 1px rgba(0,0,0,0.5), inset 0px 0px 1px rgba(0,0,0,0.5); -webkit-box-shadow:1px 1px rgba(0,0,0,0.5), inset 0px 0px 1px rgba(0,0,0,0.5); -moz-box-shadow:0px 1px rgba(0,0,0,0.5), inset 0px 0px 1px rgba(0,0,0,0.5)}
+
+.userProfile-progressBar span{background:#2b6b67; display:block; height:6px; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; -o-border-radius:3px;}
+
+.wizardTabs{ float:right; margin-right:10px}
+.wizardTabs li{ float:left; margin-left:10px; line-height:14px}
+.wizardTabs li a { display:block; text-align:center; color:#666; text-decoration:none}
+.wizardTabs li a img{ background:url(../images/50x50-icons.png) no-repeat -9999px -9999px; height:50px; width:50px}
+.wizardTabs li a span{ display:block}
+.wizardTabs .icon_school img{ background-position:0px -650px}
+.wizardTabs .icon_interest img{ background-position:0px -750px}
+.wizardTabs .icon_learningStyle img{ background-position:0px -850px}
+.wizardTabs .icon_badges img{ background-position:0px -950px}
+
+.wizardTabs .icon_school:hover img, .wizardTabs .icon_school.active img{ background-position:0px -700px}
+.wizardTabs .icon_interest:hover img,.wizardTabs .icon_interest.active img{ background-position:0px -800px}
+.wizardTabs .icon_learningStyle:hover img,.wizardTabs .icon_learningStyle.active img{ background-position:0px -900px}
+.wizardTabs .icon_badges:hover img,.wizardTabs .icon_badges.active img{ background-position:0px -1000px}
+
+.sectionContent{ margin-left:200px; margin-top:15px; transition:margin 0.3s ease-in-out; -webkit-transition:margin 0.3s ease-in-out; -moz-transition:margin 0.3s ease-in-out}
+.sectionContent.active{ margin-left:76px}
+
+.contentArea{ background:#fff; padding:20px; overflow-x:hidden; overflow-y:auto;}
+
+.footer{ height:75px; background:#090b11; font-size:1.2em}
+.footer li{ float:left; margin-right:10px; line-height:14px}
+.footer li a { display:block; text-align:center; color:#666; text-decoration:none}
+.footer li a img{ background:url(../images/50x50-icons.png) no-repeat -9999px -9999px; height:50px; width:50px}
+.footer li a span{ display:block}
+
+.footer .icon_addSchool img{ background-position:0px -1100px}
+.footer .icon_editProfile img{ background-position:0px -1150px}
+.footer .icon_back img{ background-position:0px -1200px}
+
+.profile-schools{ width:100%; float:left; font-size:1.2em} 
+.profile-schools h3{ font-size:1.8em; font-weight:normal; margin-bottom:20px}
+.study{ overflow:hidden}
+.study li{ width:230px; padding:10px; min-height:100px; margin:0 20px 20px 0; float:left; display:block; background:#efeded; box-shadow:2px 2px rgba(0,0,0,0.35);-webkit-box-shadow:2px 2px rgba(0,0,0,0.35);-moz-box-shadow:2px 2px rgba(0,0,0,0.35)}
+.study-className{ font-size:1.8em; font-weight:bold; color:#414141}
+.study-place{ margin-bottom:15px; font-size:1.2em}
+.study-duration{}
+
+.study.current li{ background:#fffbcb;box-shadow:2px 2px rgba(233,210,154,1);}
+.study.current .study-className{ color:#d0ab52}
+
+.curriculum-listings li{ width:200px; min-height:175px; background:#ebebeb; margin:0 20px 20px 0; float:left}
+.curriculum-listings li .curriculum-title{ min-height:70px; padding:15px; background:#666}
+.curriculum-listings li .curriculum-title img{ width:50px; height:50px; background:url(../images/50x50-icons.png) no-repeat 0px -1250px}
+.curriculum-listings li .curriculum-title span{ display:block; font-size:1.5em; color:#fff}
+.curriculum-listings li .curriculum-desc{min-height:50px; padding:15px; font-size:1.3em; color:#666; text-shadow:0 1px #fff}
+
+@media (min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1),(-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2) {
+	
+	.login{ background-image:url(../images/login-icon-2x.png); background-size:80px auto}
+	.topBar-menu img{ background-image:url(../images/60x60-icons-2x.png); background-size:60px}
+	.topBar-notifications ul li a{background:url(../images/60x60-icons-2x.png) no-repeat -9999px -9999px; background-size:60px}	
+	.leftNavPane a img,.wizardTabs li a img,.footer li a img,.curriculum-listings li .curriculum-title img{background-image:url(../images/50x50-icons-2x.png); background-size:50px }	
+	
+	
+}
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd75Bold';
+    src: url('../fonts/helveticaneueltstd-bd.eot');
+    src: url('../fonts/helveticaneueltstd-bd.eot') format('embedded-opentype'),
+         url('../fonts/helveticaneueltstd-bd.woff') format('woff'),
+         url('../fonts/helveticaneueltstd-bd.ttf') format('truetype'),
+         url('../fonts/helveticaneueltstd-bd.svg#HelveticaNeueLTStd75Bold') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd55Roman';
+    src: url('../fonts/helveticaneueltstd-roman.eot');
+    src: url('../fonts/helveticaneueltstd-roman.eot') format('embedded-opentype'),
+         url('../fonts/helveticaneueltstd-roman.woff') format('woff'),
+         url('../fonts/helveticaneueltstd-roman.ttf') format('truetype'),
+         url('../fonts/helveticaneueltstd-roman.svg#HelveticaNeueLTStd55Roman') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd35Thin';
+    src: url('../fonts/helveticaneueltstd-th.eot');
+    src: url('../fonts/helveticaneueltstd-th.eot') format('embedded-opentype'),
+         url('../fonts/helveticaneueltstd-th.woff') format('woff'),
+         url('../fonts/helveticaneueltstd-th.ttf') format('truetype'),
+         url('../fonts/helveticaneueltstd-th.svg#HelveticaNeueLTStd35Thin') format('svg');
+}

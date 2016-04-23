@@ -1,0 +1,21 @@
+<div class="curriculum-listings">
+  <div class="container_div">
+    <ul>
+      <a>
+        <li ng-repeat="skill in allSkills">   
+          <div class="curriculum-title">
+          <br/>
+            <span align="center">{{skill.title}}</span>
+          </div>
+          <div class="curriculum-desc">{{skill.content}}</div>  
+          <div align="center">
+            <a class="btn btn-primary" ui-sref="app.viewmapeditems({skillId: skill.id})">
+              View Items
+            </a>
+          </div>
+          <br>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<br/>
+  <h2 align="center"><b>Skill Mapped Items</b></h2>
+<br/>
+<br/>
+<div class="item_heading">
+  <div class="row">
+    <div class="col-md-4"><b><h3>&nbsp;&nbsp;&nbsp;Type</h3></b></div>
+    <div class="col-md-4"><b><h3>&nbsp;&nbsp;&nbsp;Desciption</h3></b></div>
+    <div class="col-md-4"><b><h3>&nbsp;&nbsp;&nbsp;Operations</h3></b></div>
+  </div>
+</div>
+<div class="row" ng-repeat= "item in Allitems" style="margin-left: 15%; margin-right: 20%; background-color:white;">
+  <hr>
+  <div class="col-md-4">{{item.qtype}}</div>
+  <div class="col-md-4">&nbsp;&nbsp;&nbsp;{{item.question.items[0].question}}</div>
+  <div class="col-md-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="button" class= "btn btn-primary" ui-sref= "app.simplequestionedit({itemId: item.id})">Edit</button>
+    <button type="button" class= "btn btn-primary">Publish</button>
+  </div>
+</div>
+
+<style type="text/css">
+
+.item_heading{
+   margin-left: 15%;
+   margin-right: 20%;
+   background-color: #20161e;
+   color: white;
+   height: 30%; 
+  }
+</style>

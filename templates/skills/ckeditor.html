@@ -1,0 +1,32 @@
+<h3 align="center"><b>Content Manager</b></h3>
+  <div class="backing">
+    <a class="btn btn-primary" ui-sref="app.dashboard">Back</a>  
+  </div>
+  <br/>
+<form  nonvalidate role="form" class="management">  
+  <label class="control-label" align="center"><h2><b>Content</b></h2></label>
+  <br/>
+  <div class="form-group" ng-class="{ 'has-error' : createarea.skill.$invalid && !createarea.skill.$pristine }">
+  <textarea ckeditor="editorOptions" ckeditor  name="editor" ng-model="skill.content" ng-minlength="30" ng-maxlength="100" required>
+  </textarea>
+   <p ng-show="createarea.skill.$error.minlength" class="help-block">Text is too short.</p>
+   <p ng-show="createarea.skill.$error.maxlength" class="help-block">Text is too long.</p>
+   <p ng-show="createarea.skill.$invalid && !createarea.skill.$pristine" class="help-block">You should enter content properly</p>
+   <br/>
+  <br/>
+   <div class="controls">
+      <button type="button" ng-click="save(2)" ui-sref="app.contentloskills({loId: loid1})" class="btn btn-primary">Save</button>
+   </div>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+</form>
+
+<style type="text/css">
+.management
+{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+</style>

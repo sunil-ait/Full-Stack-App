@@ -1,0 +1,43 @@
+<form name="createskill" class="management" novalidate>
+  <div class="control-group">
+    <label class="control-label" align="center"><h3><b>New Skill</b></h3></label>
+    <br/>
+    <div class="form-group" ng-class="{ 'has-error' : createskill.id.$invalid && !createskill.id.$pristine }">
+      <input type="text" placeholder="Skill Id" class="form-control" name="id" ng-model="skill.id" ng-minlength="3" ng-maxlength="8" required>
+      <!-- <p ng-show="createarea.id.$invalid && !createarea.id.$pristine" class="help-block">You should enter id properly</p> -->
+      <p ng-show="createskill.id.$error.minlength" class="help-block">Id is too short.</p>
+      <p ng-show="createskill.id.$error.maxlength" class="help-block">Id is too long.</p>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error' : createskill.title.$invalid && !createskill.title.$pristine }">
+      <input type="text" placeholder="Skill title" class="form-control" name="title" ng-model="skill.title" ng-minlength="3" ng-maxlength="8" required>
+      <p ng-show="createskill.title.$error.minlength" class="help-block">Title is too short.</p>
+      <p ng-show="createskill.title.$error.maxlength" class="help-block">Title is too long.</p>
+    </div>
+    <div class="form-group" ng-class="{'has-error' : createskill.image.$invalid && !createskill.image.$pristine }">
+        <input type="text" placeholder="Skill Image" class="form-control" name="image" ng-model="skill.image" ng-minlength="10" ng-maxlength="20" required>
+        <p ng-show="createskill.image.$error.minlength" class="help-block">Image is too short.</p>
+        <p ng-show="createskill.image.$error.maxlength" class="help-block">Image is too long.</p>
+    </div>
+        <textarea name="content" class="form-control" rows="6" Placeholder="Content" id ="content" ng-model="skill.content" ng-minlength="10" ng-maxlength="20" required>
+    <div class="form-group" ng-class="{'has-error' : createskill.content.$invalid && !createskill.content.$pristine }">
+        </textarea>          
+        <p ng-show="createskill.content.$error.minlength" class="help-block">description is too short.</p>
+        <p ng-show="createskill.content.$error.maxlength" class="help-block">description is too long.</p>
+    </div>
+    <div class="controls" ng-disabled="createskill.$invalid">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" ng-disabled="createskill.$invalid" ng-click="save(1)" ui-sref="app.contentarea">Save</button>
+    </div>
+</div>
+  <br/>
+  <br/>
+  <br/>
+</form>
+
+<style type="text/css">
+  .management
+  {
+    margin-left: 40%;
+    margin-right: 40%;
+  }
+</style>

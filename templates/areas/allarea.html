@@ -1,0 +1,117 @@
+ <angular-refresh></angular-refresh>
+ 
+ <div ng-repeat="item in flickr.items">
+    {{ item.title }}
+  </div>
+
+
+<div class="curriculum-listings">
+  <h3 align="center"><b>Curriculum Manager</b></h3>
+  <div class="backing">
+    <a class="btn btn-primary" ui-sref="app.dashboard">Back</a>  
+  </div>
+  <div class="container_div" class="scrolling">
+    <br/>
+    <ul>
+      <a>
+        <li>
+          <div align="center" style="margin-top: 25%;">
+            <input type="button" class="btn btn-primary" ng-click="open(area.id,1)" value="New Area">
+          </div>
+        </li>
+        <li ng-repeat="area in allAreas"> 
+          <input type="hidden" ng-model="area.id">  
+          <div class="curriculum-title">
+          <br/>
+          <span align="center" ng-model="area.title">{{area.title}}</span>
+          </div>
+          <div class="curriculum-desc" ng-model="area.description">{{area.description}}</div>
+            <div align="center">
+              <a class="btn btn-primary" ng-click="areagraph()">Graph</a>
+              <a class="btn btn-primary" ui-sref="app.areacourses({areaId: area.id})">View</a>
+              <a class="btn btn-primary" ng-click="open(area.id,2)">Edit</a>
+              <a class="btn btn-primary" ng-click="deletearea(area)">Delete</a>
+            </div>
+          <br>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>
+
+<script type="text/ng-template" id="myareaModalContent.html">
+  <div class="modal-header">
+      <h3 align="center"><b >New Area</b></h3>
+  </div>
+  <div class="modal-body">
+    <form name="createarea" class="model" novalidate>
+      <div class="control-group">
+        <br/>
+
+        <div class="form-group" ng-class="{ 'has-error' : createarea.input.$invalid && !createarea.input.$pristine }">
+
+          <input type="text" id="input" name="input" placeholder="Area Id" class="form-control" ng-model="area.id" ng-pattern="^\w+-\d{3}$" ng-minlength="6" ng-maxlength="10" required> 
+          
+          <p ng-show="createarea.input.$invalid && !createarea.input.$pristine" class="help-block">You should enter id properly in format like: IITJEE-001</p>
+
+          <p ng-show="createarea.input.$error.minlength" class="help-block">Id should be more than equal 6</p>
+          <p ng-show="createarea.input.$error.maxlength" class="help-block">Id should be less than equal 10</p>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error' : createarea.title.$invalid && !createarea.title.$pristine }">
+          <input type="text" placeholder="Area title" class="form-control" name="title" ng-model="area.title" ng-minlength="7" ng-maxlength="50" required>
+          <p ng-show="createarea.title.$error.minlength" class="help-block">Title should be more than 7</p>
+          <p ng-show="createarea.title.$error.maxlength" class="help-block">Title should be less than 50</p>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : createarea.image.$invalid && !createarea.image.$pristine }">
+            <input type="text" placeholder="Area Image" class="form-control" name="image" ng-model="area.image" ng-minlength="25" ng-maxlength="40" required>
+            <p ng-show="createarea.image.$error.minlength" class="help-block">Image should be more than 20</p>
+            <p ng-show="createarea.image.$error.maxlength" class="help-block">Image should be less then 30</p>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : createarea.description.$invalid && !createarea.description.$pristine }">
+            <textarea name="description" class="form-control" rows="6" Placeholder="Description" id ="description" ng-model="area.description" ng-minlength="20" ng-maxlength="70" required>
+            </textarea>          
+            <p ng-show="createarea.description.$error.minlength" class="help-block">description should be more than 20</p>
+            <p ng-show="createarea.description.$error.maxlength" class="help-block">description should be less than 70</p>
+        </div>
+        <div class="controls" ng-disabled="createarea.$invalid">
+          <button  ng-if="id ==1"ui-sref="app.contentarea" class="btn btn-primary" ng-click="save(1)" ng-disabled="createarea.$invalid">Save</button>
+          <button ui-sref="app.contentarea"  ng-if="id==2" class="btn btn-primary" ng-click="save(2)" ng-disabled="createarea.$invalid">Save</button>
+          <button ui-sref="app.contentarea" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+  </div>
+</script>
+
+
+<script type="text/ng-template" id="myareaModalContentdelete.html">
+  <div class="modal-body">
+    <form name="aredelete" class="model" novalidate>
+      <p> Do you want to delete area ?</p>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button ui-sref="app.contentarea" class="btn btn-primary" ng-click="deletearea()">Ok</button>
+    <button ui-sref="app.contentarea" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+  </div>
+</script>
+
+<script type="text/ng-template" id="myareagraphModal.html">
+<div style="background-color: #6eb8d7">
+  <div class="modal-header">
+      <h3 align="center"><b><h1>Area Graph</h1></b></h3>
+  </div>
+  <div class="modal-body">
+    <br/>
+    <br/>
+    <br/>
+    <my-nodes></my-nodes>
+  </div>
+  <div class="modal-footer">
+    <button ui-sref="app.contentarea" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+  </div>
+</div>
+</script>

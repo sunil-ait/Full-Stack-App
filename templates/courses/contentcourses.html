@@ -1,0 +1,24 @@
+<div class="curriculum-listings">
+  <h3 align="center"><b>Content Manager</b></h3>
+  <div class="backing">
+    <a class="btn btn-primary" ui-sref="app.dashboard">Back</a>  
+  </div>
+  <br/>
+  <div class="container_div">
+    <ul>
+      <a>
+        <li ng-repeat="course in allCourses">   
+          <div class="curriculum-title">
+          <br/>
+            <span align="center">{{course.title}}</span>
+          </div>
+          <div class="curriculum-desc">{{course.description}}</div>  
+          <div align="center">
+            <a class="btn btn-primary" ui-sref="app.contentcoursemodules({courseId: course.id})">View Modules</a>
+          </div>
+          <br>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>

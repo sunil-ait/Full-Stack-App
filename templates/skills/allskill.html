@@ -1,0 +1,73 @@
+<div class="curriculum-listings">
+  <h3 align="center"><b>Curriculum Manager</b></h3>
+  <div class="backing">
+    <a class="btn btn-primary" ui-sref="app.lessonlos({lessonId: lessonid})">Back</a>
+  </div>
+  <div class="container_div">
+    <ul class="scrolling">
+      <a>
+        <li>
+          <div align="center" style="margin-top: 25%;">
+            <input type="button" class="btn btn-primary" ng-click="open(loid,1)" value="New skill">
+          </div>
+        </li>
+        <li ng-repeat="skill in allSkills">   
+          <div class="curriculum-title">
+          <br/>
+            <span align="center">{{skill.title}}</span>
+          </div>
+          <div class="curriculum-desc">{{skill.content}}</div>  
+          <div align="center">
+            <a class="btn btn-primary" ui-sref="app.adjecencies({skillId: skill.id})">Adjacencies</a>
+            <a class="btn btn-primary" ng-click="editskill(skill.id,2)">Edit</a>
+            <a class="btn btn-primary" ng-click="deleteskill(skill)">Delete</a>
+          </div>
+          <br>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>
+
+<script type="text/ng-template" id="myskillModalContent.html">
+  <div class="modal-header">
+      <h3 align="center"><b >New Skill</b></h3>
+  </div>
+  <div class="modal-body">
+    <form name="createskill" class="model" novalidate>
+      <div class="control-group">
+        <br/>
+        <div class="form-group" ng-class="{ 'has-error' : createskill.id.$invalid && !createskill.id.$pristine }">
+          <input type="text" placeholder="Skill Id" class="form-control" name="id" ng-model="skill.id" ng-minlength="3" ng-maxlength="8" required>
+          <!-- <p ng-show="createskill.id.$invalid && !createskill.id.$pristine" class="help-block">You should enter id properly</p> -->
+          <p ng-show="createskill.id.$error.minlength" class="help-block">Id is too short.</p>
+          <p ng-show="createskill.id.$error.maxlength" class="help-block">Id is too long.</p>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error' : createskill.title.$invalid && !createskill.title.$pristine }">
+          <input type="text" placeholder="Skill title" class="form-control" name="title" ng-model="skill.title" ng-minlength="3" ng-maxlength="8" required>
+          <p ng-show="createskill.title.$error.minlength" class="help-block">Username is too short.</p>
+          <p ng-show="createskill.title.$error.maxlength" class="help-block">Username is too long.</p>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : createskill.image.$invalid && !createskill.image.$pristine }">
+            <input type="text" placeholder="Skill Image" class="form-control" name="image" ng-model="skill.image" ng-minlength="10" ng-maxlength="20" required>
+            <p ng-show="createskill.image.$error.minlength" class="help-block">Image is too short.</p>
+            <p ng-show="createskill.image.$error.maxlength" class="help-block">Image is too long.</p>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : createskill.content.$invalid && !createskill.content.$pristine }">
+            <textarea name="content" class="form-control" rows="6" Placeholder="Description" id ="description" ng-model="skill.content" ng-minlength="10" ng-maxlength="20" required>
+            </textarea>          
+            <p ng-show="createskill.content.$error.minlength" class="help-block">Content is too short.</p>
+            <p ng-show="createskill.content.$error.maxlength" class="help-block">Content is too long.</p>
+        </div>
+        <div class="controls" ng-disabled="createskill.$invalid">
+          <button  ng-if="id ==1" ui-sref="app.dashboard" class="btn btn-primary" ng-click="save(1)" ng-disabled="createskill.$invalid">Save</button>
+          <button ui-sref="app.contentarea"  ng-if="id==2" class="btn btn-primary" ng-click="save(2)" ng-disabled="createskill.$invalid">Save</button>
+          <button ui-sref="app.contentarea" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+  </div>
+</script>

@@ -1,0 +1,25 @@
+<div class="curriculum-listings">
+  <h3 align="center"><b>Content Manager</b></h3>
+  <div class="backing">
+    <a class="btn btn-primary" ui-sref="app.dashboard">Back</a>  
+  </div>
+  <br/>
+  <div class="container_div">
+    <ul>
+      <a>
+        <li ng-repeat="area in allAreas"> 
+          <input type="hidden" ng-model="area.id">  
+          <div class="curriculum-title">
+          <br/>
+          <span align="center" ng-model="area.title">{{area.title}}</span>
+          </div>
+          <div class="curriculum-desc" ng-model="area.description">{{area.description}}</div>
+          <div align="center">
+            <a class="btn btn-primary" ui-sref="app.contentareacourses({areaId: area.id})">View Courses</a>
+          </div>
+          <br>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>

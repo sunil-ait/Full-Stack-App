@@ -1,0 +1,24 @@
+<div class="curriculum-listings">
+  <h3 align="center"><b>Content Manager</b></h3>
+  <div class="backing">
+    <a class="btn btn-primary" ui-sref="app.dashboard">Back</a>  
+  </div>
+  <br/>
+  <div class="container_div">
+    <ul>
+      <a>
+        <li ng-repeat="lo in alllos">   
+          <div class="curriculum-title">
+          <br/>
+            <span align="center">{{lo.title}}</span>
+          </div>
+          <div class="curriculum-desc">{{lo.description}}</div>  
+          <div align="center">
+            <a class="btn btn-primary" ui-sref="app.contentloskills({loId: lo.id})">View Skills</a>
+          </div>
+          <br>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>

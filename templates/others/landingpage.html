@@ -1,0 +1,32 @@
+<nav class="navbar navbar-inverse navbar-fixed" style="background-color: #20161e">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="dropdown">
+        <a data-toggle="dropdown"><h2 class="glyphicon glyphicon-menu-hamburger" style="color: white;"></h2></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="app.introduction"><h5>Dashboard</h5></a></li>
+          <li><a ui-sref="app.organization"><h5>Organization</h5></a></li>
+          <li><a ui-sref="app.permissions"><h5>Permission</h5></a></li>
+          <li><a ui-sref="app.roles"><h5>Roles</h5></a></li>
+          <li><a ui-sref="app.users"><h5>Users</h5></a></li>
+          <li><a ui-sref="/"><h5>Logout</h5></a></li>
+        </ul>
+      </div>
+    </div>
+    <div align="right" style="margin-right: 4%;">
+      <h2 style="color:white;">Full-Stack</h2>
+    </div>
+  </div>
+</nav>
+
+<div ui-view></div>
+
+<style type="text/css">
+ .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a, .dropdown-menu li.current-menu-item > a {
+  background-color: #6eb8d7;
+  background-image: -moz-linear-gradient(center top , #333333, #000000);
+  background-repeat: repeat-x;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+</style>
